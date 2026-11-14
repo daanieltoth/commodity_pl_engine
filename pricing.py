@@ -81,17 +81,6 @@ def position_value(
 
     return option_price*quantity*contract_size
 
-value = position_value(
-    forward=100,
-    strike=100,
-    volatility=0.20,
-    time_to_expiry=1.0,
-    rate=0.0,
-    option_type="call",
-    quantity=10,
-    contract_size=1000,
-)
-
 def calculate_pnl(
         old_value: float,
         new_value: float,
@@ -123,4 +112,103 @@ def black76_delta(
         return -discount_factor * normal_cdf(-d1)
 
     raise ValueError("option_type must be 'call' or 'put'")
+
+def normal_pdf(x: float) -> float:
+    return (
+        1 / math.sqrt(2 * math.pi)
+        * math.exp(-0.5 * x ** 2)
+    )
+
+def black76_gamma(
+    forward: float,
+    strike: float,
+    volatility: float,
+    time_to_expiry: float,
+    rate: float,
+) -> float:
+    d1, _ = calculate_d1_d2(
+        forward,
+        strike,
+        volatility,
+        time_to_expiry,
+    )
+
+    discount_factor = math.exp(-rate * time_to_expiry)
+
+    gamma = (
+        discount_factor
+        * normal_pdf(d1)
+        / (
+            forward
+            * volatility
+            * math.sqrt(time_to_expiry)
+        )
+    )
+
+    return gamma
+
+def black76_vega(
+    forward: float,
+    strike: float,
+    volatility: float,
+    time_to_expiry: float,
+    rate: float,
+) -> float:
+    d1, _ = calculate_d1_d2(
+        forward,
+        strike,
+        volatility,
+        time_to_expiry,
+    )
+
+    discount_factor = math.exp(-rate * time_to_expiry)
+
+    vega = (
+        discount_factor
+        * forward
+        * normal_pdf(d1)
+        * math.sqrt(time_to_expiry)
+    )
+
+    return vega
+
+def black76_theta(
+    forward: float,
+    strike: float,
+    volatility: float,
+    time_to_expiry: float,
+    rate: float,
+    option_type: str,
+) -> float:
+    d1, _ = calculate_d1_d2(
+        forward,
+        strike,
+        volatility,
+        time_to_expiry,
+    )
+
+    option_price = black76_price(
+        forward,
+        strike,
+        volatility,
+        time_to_expiry,
+        rate,
+        option_type,
+    )
+
+    discount_factor = math.exp(-rate * time_to_expiry)
+
+    theta = (
+        rate * option_price
+        - (
+            discount_factor
+            * forward
+            * normal_pdf(d1)
+            * volatility
+        )
+        / (2 * math.sqrt(time_to_expiry))
+    )
+
+    return theta
+
 
