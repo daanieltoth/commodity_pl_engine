@@ -1,1 +1,57 @@
-# Commodity P&L Engine ## Features - **Forward tracking and pricing** — Track commodity forward positions and calculate their values. - **Option tracking and pricing** — Track commodity option positions and calculate their values. - **P&L monitoring** — Follow profit and loss across commodity positions. ## Screenshots ### Application overview <table> <tr> <td align="center" width="800" height="280"> <em>Add an application overview screenshot here.</em> </td> </tr> </table> <!-- Replace the table above with: ![Application overview](docs/images/overview.png) --> ### Forward tracking and pricing <table> <tr> <td align="center" width="800" height="280"> <em>Add a forward tracking and pricing screenshot here.</em> </td> </tr> </table> <!-- Replace the table above with: ![Forward tracking and pricing](docs/images/forwards.png) --> ### Option tracking and pricing <table> <tr> <td align="center" width="800" height="280"> <em>Add an option tracking and pricing screenshot here.</em> </td> </tr> </table> <!-- Replace the table above with: ![Option tracking and pricing](docs/images/options.png) --> ## Getting Started <!-- Add the project's verified setup instructions below before publishing. --> *Setup instructions to be added.* ## Pricing Methodology <!-- Document the priciang models, required market inputs, valuation conventions, and P&L calculation method used by the application. --> *Pricing methodology to be added.*
+# Commodity P&L Engine
+
+## Features
+
+- **Forward tracking and pricing** — Track commodity forward positions and calculate their values.
+- **Option tracking and pricing** — Track commodity option positions and calculate their values.
+- **P&L monitoring** — Follow profit and loss across commodity positions.
+
+## Screenshots
+
+### Application overview
+
+<table>
+  <tr>
+    <td align="center" width="800" height="280">
+      <em>Add an application overview screenshot here.</em>
+    </td>
+  </tr>
+</table>
+
+<!-- Replace the table above with: ![Application overview](docs/images/overview.png) -->
+
+### Forward tracking and pricing
+
+<table>
+  <tr>
+    <td align="center" width="800" height="280">
+      <em>Add a forward tracking and pricing screenshot here.</em>
+    </td>
+  </tr>
+</table>
+
+<!-- Replace the table above with: ![Forward tracking and pricing](docs/images/forwards.png) -->
+
+### Option tracking and pricing
+
+<table>
+  <tr>
+    <td align="center" width="800" height="280">
+      <em>Add an option tracking and pricing screenshot here.</em>
+    </td>
+  </tr>
+</table>
+
+<!-- Replace the table above with: ![Option tracking and pricing](docs/images/options.png) -->
+
+## Getting Started
+
+<!-- Add the project's verified setup instructions below before publishing. -->
+
+*Setup instructions to be added.*
+
+## Pricing Methodology
+
+<!-- Document the pricing models, required market inputs, valuation conventions, and P&L calculation method used by the application. -->
+
+*Pricing methodology to be added.*
