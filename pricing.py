@@ -1,5 +1,5 @@
 import math
-
+from models import *
 def calculate_d1_d2(
     forward: float,
     strike: float,
@@ -67,19 +67,25 @@ def black76_price(
         raise ValueError("option_type must be 'call' or 'put'")
 
 
-def position_value(
-        forward: float,
-        strike: float,
-        volatility: float,
-        time_to_expiry: float,
-        rate: float,
-        option_type: str,
-        quantity: int,
-        contract_size: float,
+def value_position(
+    position: OptionPosition,
+    market: MarketState,
 ) -> float:
-    option_price = black76_price(forward, strike, volatility, time_to_expiry, rate, option_type)
+    unit_price = black76_price(
+        forward=market.forward,
+        strike=position.strike,
+        volatility=market.volatility,
+        time_to_expiry=market.time_to_expiry,
+        rate=market.rate,
+        option_type=position.option_type,
+    )
 
-    return option_price*quantity*contract_size
+    position_multiplier = (
+        position.quantity
+        * position.contract_size
+    )
+
+    return unit_price * position_multiplier
 
 def calculate_pnl(
         old_value: float,
