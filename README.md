@@ -18,7 +18,7 @@
   </tr>
 </table>
 
-<!-- Replace the table above with: ![Application overview](docs/images/overview.png) -->
+<img width="1867" height="887" alt="image" src="https://github.com/user-attachments/assets/e7189927-343e-4f4f-9f00-d1ccb0f3b34c" />
 
 ### Forward tracking and pricing
 
@@ -31,6 +31,7 @@
 </table>
 
 <!-- Replace the table above with: ![Forward tracking and pricing](docs/images/forwards.png) -->
+
 
 ### Option tracking and pricing
 
