@@ -13,12 +13,12 @@
 <table>
   <tr>
     <td align="center" width="800" height="280">
-      <em>Add an application overview screenshot here.</em>
+      <img alt="image" src="https://github.com/user-attachments/assets/e7189927-343e-4f4f-9f00-d1ccb0f3b34c" />
     </td>
   </tr>
 </table>
 
-<img width="1867" height="887" alt="image" src="https://github.com/user-attachments/assets/e7189927-343e-4f4f-9f00-d1ccb0f3b34c" />
+
 
 ### Forward tracking and pricing
 
