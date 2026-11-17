@@ -94,5 +94,6 @@ try:
     st.info(
         "The numbers refresh automatically when the numbers are changed"
     )
+    
 except ValueError as error:
     st.error(str(error))
